@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.SignupFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etFirstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/fragment_horizontal_margin"
+            android:layout_marginTop="@dimen/fragment_vertical_margin"
+            android:layout_marginEnd="@dimen/fragment_horizontal_margin"
+            android:hint="First Name"
+            app:helperText="Please enter your first name."
+            app:helperTextEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tudor" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etLastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/fragment_horizontal_margin"
+            android:layout_marginTop="@dimen/fragment_vertical_margin"
+            android:layout_marginEnd="@dimen/fragment_horizontal_margin"
+            android:hint="Last Name"
+            app:helperText="Please enter your last name."
+            app:helperTextEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etFirstName">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Anastasiu" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/fragment_horizontal_margin"
+            android:layout_marginTop="@dimen/fragment_vertical_margin"
+            android:layout_marginEnd="@dimen/fragment_horizontal_margin"
+            android:hint="@string/etEmail_hint"
+            app:helperText="@string/etEmail_helper_text"
+            app:helperTextEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etLastName">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:text="@string/etEmail_default_text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/fragment_horizontal_margin"
+            android:layout_marginTop="@dimen/fragment_vertical_margin"
+            android:layout_marginEnd="@dimen/fragment_horizontal_margin"
+            android:hint="@string/etPassword_hint"
+            app:endIconMode="password_toggle"
+            app:helperText="@string/etPassword_helper_text"
+            app:helperTextEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etEmail">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:text="@string/etPassword_default_text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etPasswordRepeat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/fragment_horizontal_margin"
+            android:layout_marginTop="@dimen/fragment_vertical_margin"
+            android:layout_marginEnd="@dimen/fragment_horizontal_margin"
+            android:hint="@string/etPasswordRepeat_hint"
+            app:endIconMode="password_toggle"
+            app:helperText="@string/etPasswordRepeat_helper_text"
+            app:helperTextEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etPassword">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:text="@string/etPassword_default_text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btSignUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/btSignUp_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etPasswordRepeat" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

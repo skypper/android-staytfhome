@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">StayTFHome</string>
+
+    <string name="facebook_app_id">2666837476878072</string>
+    <string name="fb_login_protocol_scheme">fb2666837476878072</string>
+
+    <string name="google_client_id">148073439386-7nqes4khj1jlkiltq8v217f8ljga67nd.apps.googleusercontent.com</string>
+    <string name="google_client_secret">o5zJYAfR9UW_q92y3DvmmUuj</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="signin_fragment_label">Sign In</string>
+    <string name="signup_fragment_label">Sign Up</string>
+    <string name="trip_search_fragment_label">Search</string>
+    <string name="etEmail_helper_text">Please enter your email.</string>
+    <string name="etEmail_hint">Email</string>
+    <string name="etEmail_default_text">mgmt10@gmail.com</string>
+    <string name="etPassword_hint">Password</string>
+    <string name="etPassword_helper_text">Please enter your password.</string>
+    <string name="etPassword_default_text">1234</string>
+    <string name="btSignIn_text">Sign In</string>
+    <string name="btSignUp_text">Sign Up</string>
+    <string name="etPasswordRepeat_hint">Repeat Password</string>
+    <string name="etPasswordRepeat_helper_text">Please enter your password again.</string>
+    <string name="main_fragment_label">Home</string>
+</resources>
