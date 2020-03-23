@@ -38,4 +38,19 @@ interface MainApiService {
     @Multipart
     @POST("/api/user/uploadAvatar")
     fun uploadAvatar(@Part avatar: MultipartBody.Part): Single<Response<Unit>>
+
+    /**
+     * Group API
+     */
+    @GET("/api/group/list")
+    fun getGroups(): Single<Response<List<Group>>>
+
+    @POST("/api/group/create")
+    fun createGroup(@Body createRequest: GroupCreateRequest): Single<Response<Unit>>
+
+    @PUT("/api/group/update")
+    fun updateGroup(@Body updateRequest: GroupUpdateRequest): Single<Response<Unit>>
+
+    @DELETE("/api/group/delete/{id}")
+    fun deleteGroup(@Path("id") id: Int): Single<Response<Unit>>
 }
