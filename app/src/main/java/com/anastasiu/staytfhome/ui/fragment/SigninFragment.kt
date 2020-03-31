@@ -201,11 +201,13 @@ class SigninFragment : Fragment() {
                 @SuppressLint("CheckResult")
                 override fun onPostExecute(accessToken: String) {
                     credentialsAuthenticatorProvider.googleAuthenticateToken(accessToken)
-                        .subscribe { response ->
+                        .subscribe({ response ->
                             if (response.isSuccessful) {
                                 onLoginSuccess()
                             }
-                        }
+                        }, {
+                            Toast.makeText(activity, "There was a problem reaching the server.", Toast.LENGTH_LONG).show()
+                        })
                 }
             }
             ExchangeAccessTokenTask().execute()
