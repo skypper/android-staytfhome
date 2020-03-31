@@ -23,7 +23,7 @@ class LoginViewModel @Inject constructor(
     var userForm = UserForm()
 
     val userSubmitFormEvent = MutableLiveData<Event<UserForm>>()
-    val singoutEvent = MutableLiveData<Event<User>>()
+    val signOutEvent = MutableLiveData<Event<User>>()
 
     private val compositeDisposable = CompositeDisposable()
 
@@ -75,7 +75,7 @@ class LoginViewModel @Inject constructor(
     fun signOut() {
         compositeDisposable.add(credentialsAuthenticatorProvider.signOut().subscribe({ response ->
             if (response.isSuccessful) {
-                singoutEvent.postValue(Event(user.value!!))
+                signOutEvent.postValue(Event(user.value!!))
             }
         }, { e ->
             Log.e(TAG, e.toString())

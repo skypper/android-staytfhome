@@ -92,7 +92,7 @@ class ProfileManagerFragment : Fragment() {
                 ).show()
             }
         })
-        loginViewModel.singoutEvent.observe(this, Observer<Event<User>> { event ->
+        loginViewModel.signOutEvent.observe(this, Observer<Event<User>> { event ->
             event.getContentIfNotHandledOrReturnNull()?.let {
                 LoginManager.getInstance().logOut()
 
