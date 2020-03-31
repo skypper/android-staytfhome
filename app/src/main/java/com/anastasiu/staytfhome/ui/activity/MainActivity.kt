@@ -49,8 +49,8 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
             } else {
                 if (!user.roles.split(",").contains("user")) {
                     bottomNavigation.visibility = View.GONE
-//                    findNavController(this, R.id.nav_host_fragment)
-//                        .navigate(MainFragmentDirections.actionMainFragmentToProfileManagerFragment())
+                    findNavController(this, R.id.nav_host_fragment)
+                        .navigate(MainFragmentDirections.actionMainFragmentToProfileManagerFragment())
                 }
             }
         })
@@ -62,6 +62,7 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.mainFragment -> showNavigationComponents()
+                R.id.reportManagerFragment -> showNavigationComponents()
                 else -> hideNavigationComponents()
             }
         }
@@ -80,4 +81,8 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
     }
 
     override fun supportFragmentInjector() = dispatchingAndroidInjector
+
+    companion object {
+        const val MY_PERMISSIONS_REQUEST_READ_CONTACTS: Int = 10
+    }
 }

@@ -1,6 +1,5 @@
 package com.anastasiu.staytfhome.ui.module
 
-import com.anastasiu.staytfhome.ui.fragment.MainFragment
 import com.anastasiu.staytfhome.ui.fragment.*
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -15,6 +14,12 @@ abstract class FragmentModule {
 
     @ContributesAndroidInjector
     abstract fun signupFragment(): SignupFragment
+
+    @ContributesAndroidInjector(modules = [ReportManagerFragmentModule::class])
+    abstract fun reportManagerFragment(): ReportManagerFragment
+
+    @ContributesAndroidInjector
+    abstract fun reportCreateUpdateFragment(): ReportCreateUpdateFragment
 
     @ContributesAndroidInjector
     abstract fun profileManagerFragment(): ProfileManagerFragment

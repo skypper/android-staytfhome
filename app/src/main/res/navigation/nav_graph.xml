@@ -18,6 +18,9 @@
         <action
             android:id="@+id/action_mainFragment_to_profileManagerFragment"
             app:destination="@id/profileManagerFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_reportManagerFragment"
+            app:destination="@id/reportManagerFragment" />
     </fragment>
 
     <fragment
@@ -96,5 +99,17 @@
                 app:exitAnim="@android:anim/fade_out" />
         </fragment>
     </navigation>
+    <fragment
+        android:id="@+id/reportManagerFragment"
+        android:name="com.anastasiu.staytfhome.ui.fragment.ReportManagerFragment"
+        android:label="@string/report_manager_fragment_label" >
+        <action
+            android:id="@+id/action_reportManagerFragment_to_reportCreateUpdateFragment"
+            app:destination="@id/reportCreateUpdateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reportCreateUpdateFragment"
+        android:name="com.anastasiu.staytfhome.ui.fragment.ReportCreateUpdateFragment"
+        android:label="ReportCreateUpdateFragment" />
 
 </navigation>

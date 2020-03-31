@@ -7,6 +7,10 @@
         android:icon="@drawable/ic_baseline_home_24"
         android:title="Home" />
     <item
+        android:id="@+id/reportManagerFragment"
+        android:icon="@drawable/ic_baseline_account_circle_24"
+        android:title="Reports" />
+    <item
         android:id="@+id/profileManagerFragment"
         android:icon="@drawable/ic_baseline_account_circle_24"
         android:title="Profile" />
