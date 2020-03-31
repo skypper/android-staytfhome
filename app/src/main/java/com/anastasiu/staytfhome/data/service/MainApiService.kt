@@ -1,6 +1,7 @@
 package com.anastasiu.staytfhome.data.service
 
 import com.anastasiu.staytfhome.data.model.Group
+import com.anastasiu.staytfhome.data.model.Report
 import com.anastasiu.staytfhome.data.model.User
 import io.reactivex.Single
 import okhttp3.MultipartBody
@@ -53,4 +54,19 @@ interface MainApiService {
 
     @DELETE("/api/group/delete/{id}")
     fun deleteGroup(@Path("id") id: Int): Single<Response<Unit>>
+
+    /**
+     * Report API
+     */
+    @GET("/api/report/list")
+    fun getReports(): Single<Response<List<Report>>>
+
+    @POST("/api/report/create")
+    fun createReport(@Body createRequest: ReportCreateRequest): Single<Response<Unit>>
+
+    @PUT("/api/report/update")
+    fun updateReport(@Body updateRequest: ReportUpdateRequest): Single<Response<Unit>>
+
+    @DELETE("/api/report/delete/{id}")
+    fun deleteReport(@Path("id") id: Int): Single<Response<Unit>>
 }

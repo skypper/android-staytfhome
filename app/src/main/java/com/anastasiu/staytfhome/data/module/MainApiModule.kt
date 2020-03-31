@@ -4,6 +4,7 @@ import com.google.gson.*
 import com.google.gson.stream.JsonReader
 import com.google.gson.stream.JsonWriter
 import com.anastasiu.staytfhome.data.auth.CredentialsAuthenticatorProvider
+import com.anastasiu.staytfhome.data.repository.ReportRepository
 import com.anastasiu.staytfhome.data.repository.UserRepository
 import com.anastasiu.staytfhome.data.service.MainApiService
 import com.anastasiu.staytfhome.utils.BASE_URL
@@ -15,6 +16,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.time.LocalDate
 import java.time.LocalTime
+import java.time.ZonedDateTime
 
 @Module
 class MainApiModule {
@@ -41,6 +43,14 @@ class MainApiModule {
                     override fun read(`in`: JsonReader?): LocalTime {
                         return LocalTime.parse(`in`?.nextString())
                     }
+                }).registerTypeAdapter(ZonedDateTime::class.java, object : TypeAdapter<ZonedDateTime>() {
+                    override fun write(out: JsonWriter?, value: ZonedDateTime?) {
+                        out?.value(value.toString())
+                    }
+
+                    override fun read(`in`: JsonReader?): ZonedDateTime {
+                        return ZonedDateTime.parse(`in`?.nextString())
+                    }
                 }).create()))
         .build()
 
@@ -54,4 +64,7 @@ class MainApiModule {
 
     @Provides
     fun provideUserRepository(mainApiService: MainApiService) = UserRepository(mainApiService)
+
+    @Provides
+    fun provideReportRepository(mainApiService: MainApiService) = ReportRepository(mainApiService)
 }
